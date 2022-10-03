@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/emailFragment"
+        android:name="com.example.navigation_slide.EmailFragment"
+        android:label="fragment_email"
+        tools:layout="@layout/fragment_email" >
+        <action
+            android:id="@+id/action_emailFragment_to_fileFragment"
+            app:destination="@id/fileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fileFragment"
+        android:name="com.example.navigation_slide.fileFragment"
+        android:label="fragment_file"
+        tools:layout="@layout/fragment_file" >
+        <action
+            android:id="@+id/action_fileFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.navigation_slide.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_recentFragment"
+            app:destination="@id/recentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recentFragment"
+        android:name="com.example.navigation_slide.RecentFragment"
+        android:label="fragment_recent"
+        tools:layout="@layout/fragment_recent" >
+        <action
+            android:id="@+id/action_recentFragment_to_emailFragment"
+            app:destination="@id/emailFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.navigation_slide.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" >
+        <argument
+            android:name="pink"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </activity>
+</navigation>
